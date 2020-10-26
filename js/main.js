@@ -1,7 +1,7 @@
-let squaresNumber = 16;
 //set dom consts
 const container = document.createElement('div');
 const clearBrn = document.querySelector('#clearBtn');
+clearBtn.addEventListener('click', () => resetGrid());
 
 //makes grid space
 container.classList.add('container');
@@ -34,12 +34,7 @@ function makeGrid(squaresNumber){
     
 }
 
-makeGrid();
-
-//activates clear button
-clearBtn.addEventListener('click', e => {
-    resetGrid();
-});
+makeGrid(16);
 
 function resetGrid() {
     //prompts user for how many squares
