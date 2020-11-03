@@ -1,24 +1,12 @@
-/*.container {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-
-}
-
-.square {
-    height: 20vh;
-    width: 20vh;
-    border: black solid 1px;
-}*/
-
 body{
     text-align: center;
+    position: relative;
 }
 
-#clearBtn {
-    margin-bottom: 5vh;
+.btn {
+    margin: -4vh 1vh 3vh 0vh;
+    border: black solid 2px;
+    padding: 4px 8px 4px 8px;
 }
 
-.drawn {background: hotpink;}
+.drawn {background-color: rgb(204, 95, 149);}

@@ -1,24 +1,25 @@
-//todo: Make button nicer, adjust no. squares
+//event listeners
+clearBtn.addEventListener('click', () => clearGrid());
+resizeBtn.addEventListener('click', () => resizeGrid());
+const alertBox = document.querySelector('.alertBox');
+resizeBtn.addEventListener('click', () => alertBox.style.display = 'block');
 
-//set dom consts
+//make initial grid container
 const container = document.createElement('div');
-const clearBtn = document.querySelector('#clearBtn');
-clearBtn.addEventListener('click', () => resetGrid());
-
-//makes grid space
 container.classList.add('container');
-container.innerHTML = "";
-container.setAttribute("style", "display:flex; flex-wrap: wrap; flex-direction: row; height: 60vh; width: 60vh; margin: auto; background-color: lightblue; border: solid black 1px;");
+container.setAttribute("style", "display:flex; flex-wrap: wrap; flex-direction: row; height: 300px; width: 300px; margin: auto; background-color: lightblue; border: solid black 2px;");
 document.body.appendChild(container);
-
-//set squares variable to be used in clearing
-const square = document.querySelector('.square');
-let squares = container.childNodes;
  
-//makes grid squares
+//make grid 
 function makeGrid(number){
-    let squareDimension = (500)/number;
-    
+    //clear grid if function is called from clearGrid() or resizeGrid()
+
+    container.innerHTML = '';
+
+    //set square size variable
+    let squareDimension = (300)/number;
+
+    //build squares in rows
     for (i = 0; i < number; i++){
         let row = document.createElement('div');
         row.classList.add('row');
@@ -36,36 +37,34 @@ function makeGrid(number){
             row.appendChild(square);
             }
 
-            //square.setAttribute("style", "margin: none; height: 18vh; width: 18vh; border: solid hsl(195, 53%, 65%) 0.5px;")
             container.appendChild(row);
     }
     
 }
 
+//initial grid build
 makeGrid(16);
 
-/*
-function resetGrid() {
-    //prompts user for how many squares
-    let rowsNumber = prompt('How many squares do you want?');
-    //console.log(squaresNumber)
+function clearGrid(){
+    //passes current number of squares into makeGrid()
+    let currentNumber = Math.sqrt(document.querySelectorAll('.square').length);
+    makeGrid(currentNumber);
+    return currentNumber;
+}
 
-    //clear grid
-    var i = squares.length;
-    while( i-- ) {
-        if( squares[i].className && squares[i].className.indexOf("square") > -1 ) {
-        squares[i].parentNode.removeChild( squares[i] );
-        }
-    }
+function resizeGrid() {
+    //prompt user for how many squares
+    let number = prompt('How many squares do you want?');
 
-    if (rowsNumber > 1 && rowsNumber < 51 && Number.isInteger(+rowsNumber)) {
-        makeGrid(rowsNumber);
+    //set range of possible number and re-prompts user if not in range
+    if (number > 1 && number < 101 && Number.isInteger(+number)) {
+        makeGrid(number);
     }
     else {
-        alert('Please choose a whole number between 1 and 50');
-        resetGrid();
+        alert('Please choose a whole number between 1 and 100');
+        resizeGrid();
     }
 
 }
-*/
+
 
