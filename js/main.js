@@ -1,8 +1,6 @@
 //event listeners
 clearBtn.addEventListener('click', () => clearGrid());
 resizeBtn.addEventListener('click', () => resizeGrid());
-const alertBox = document.querySelector('.alertBox');
-resizeBtn.addEventListener('click', () => alertBox.style.display = 'block');
 
 //make initial grid container
 const container = document.createElement('div');
