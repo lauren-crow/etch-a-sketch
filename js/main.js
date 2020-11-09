@@ -5,7 +5,7 @@ resizeBtn.addEventListener('click', () => resizeGrid());
 //make initial grid container
 const container = document.createElement('div');
 container.classList.add('container');
-container.setAttribute("style", "display:flex; flex-wrap: wrap; flex-direction: row; height: 300px; width: 300px; margin: auto; background-color: lightblue; border: solid black 2px;");
+container.setAttribute("style", "display:flex; flex-wrap: wrap; flex-direction: row; height: 600px; width: 600px; margin: auto; background-color: lightblue; border: solid black 2px;");
 document.body.appendChild(container);
  
 //make grid 
@@ -15,7 +15,7 @@ function makeGrid(number){
     container.innerHTML = '';
 
     //set square size variable
-    let squareDimension = (300)/number;
+    let squareDimension = (600)/number;
 
     //build squares in rows
     for (i = 0; i < number; i++){

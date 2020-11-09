@@ -7,6 +7,7 @@ body{
     margin: -4vh 1vh 3vh 0vh;
     border: black solid 2px;
     padding: 4px 8px 4px 8px;
+    font-size: 1em;
 }
 
 .drawn {background-color: rgb(204, 95, 149);}
